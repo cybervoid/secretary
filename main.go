@@ -17,7 +17,8 @@ func main() {
 		log.Fatal("Error loading .env file")
 	}
 
-	notion(os.Getenv("NOTION_TOKEN"))
+	// notion(os.Getenv("NOTION_TOKEN"))
+	chatgpt(os.Getenv("OPENAI_API_KEY"))
 
 	// fmt.Printf("Database user: %s, password: %s\n", dbUser, "*****")
 }
