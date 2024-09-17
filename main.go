@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"log"
-	"os"
 
 	"github.com/joho/godotenv"
 )
@@ -17,8 +16,8 @@ func main() {
 		log.Fatal("Error loading .env file")
 	}
 
-	// notion(os.Getenv("NOTION_TOKEN"))
-	chatgpt(os.Getenv("OPENAI_API_KEY"))
+	// notion()
+	chatgpt()
 
 	// fmt.Printf("Database user: %s, password: %s\n", dbUser, "*****")
 }

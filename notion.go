@@ -3,13 +3,14 @@ package main
 import (
 	"context"
 	"fmt"
+	"os"
 
 	"github.com/jomei/notionapi"
 )
 
-func notion(token string) {
+func notion() {
 	// Create Notion client
-	client := notionapi.NewClient(notionapi.Token(token))
+	client := notionapi.NewClient(notionapi.Token(os.Getenv("NOTION_TOKEN")))
 
 	// Fetch a page (meta info, but not content)
 	page, err := client.Page.Get(context.Background(), notionapi.PageID("101d941266e7808ea147c6f2b07d4b07"))

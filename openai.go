@@ -3,12 +3,13 @@ package main
 import (
 	"context"
 	"fmt"
+	"os"
 
 	openai "github.com/sashabaranov/go-openai"
 )
 
-func chatgpt(token string) {
-	client := openai.NewClient(token)
+func chatgpt() {
+	client := openai.NewClient(os.Getenv("OPENAI_API_KEY"))
 	resp, err := client.CreateChatCompletion(
 		context.Background(),
 		openai.ChatCompletionRequest{
